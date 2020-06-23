@@ -32,4 +32,17 @@ export class ProductDetailComponent implements OnInit {
     });
   }
 
+  createProduct() {
+    const newProduct: Product = {
+      id: '7689098',
+      title: 'artículo nuevo desde ángular',
+      image: 'assets/images/camiseta.png',
+      price: 30000,
+      description: 'Nuevo produto'
+    };
+    this.productsService.createProduct(newProduct)
+    .subscribe( product => {
+      console.log(product);
+    });
+  }
 }
